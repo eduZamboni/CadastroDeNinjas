@@ -19,6 +19,11 @@ public class MissoesControler {
         return missoesService.listarMissoes();
     }
 
+    @GetMapping("/listar/{id}")
+    public MissoesModel listarMissoes(@PathVariable Long id){
+        return missoesService.listarMissoesPorId(id);
+    }
+
     @PostMapping("/criar")
     public String criarMissao(){
         return "Missão Criada com sucesso!";

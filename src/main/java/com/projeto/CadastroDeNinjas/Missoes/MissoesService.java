@@ -24,4 +24,14 @@ public class MissoesService {
         Optional<MissoesModel> missoesModel = missoesRepository.findById(id);
         return missoesModel.orElse(null);
     }
+
+    // Criar missões
+    public MissoesModel criarMissao(MissoesModel missoesModel) {
+        return missoesRepository.save(missoesModel);
+    }
+
+    // Deletar missão por ID
+    public void deletarMissaoPorId(Long id){
+        missoesRepository.deleteById(id);
+    }
 }

@@ -25,8 +25,8 @@ public class MissoesControler {
     }
 
     @PostMapping("/criar")
-    public String criarMissao(){
-        return "Missão Criada com sucesso!";
+    public MissoesModel criarMissao(MissoesModel missoesModel){
+        return missoesService.criarMissao(missoesModel);
     }
 
     @PutMapping("/alterar")
@@ -34,8 +34,8 @@ public class MissoesControler {
         return "Missao alterada com sucesso!";
     }
 
-    @DeleteMapping("/deletar")
-    public String deletarMissao(){
-        return "Missao deletada com sucesso!";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarMissaoPorId(@PathVariable Long id){
+        missoesService.deletarMissaoPorId(id);
     }
 }

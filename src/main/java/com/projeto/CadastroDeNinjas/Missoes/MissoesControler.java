@@ -29,9 +29,9 @@ public class MissoesControler {
         return missoesService.criarMissao(missoesModel);
     }
 
-    @PutMapping("/alterar")
-    public String alterarMissao(){
-        return "Missao alterada com sucesso!";
+    @PutMapping("/alterar/{id}")
+    public MissoesModel alterarMissao(@PathVariable Long id, @RequestBody MissoesModel missoesModel) {
+        return missoesService.alterarMissao(id, missoesModel);
     }
 
     @DeleteMapping("/deletar/{id}")

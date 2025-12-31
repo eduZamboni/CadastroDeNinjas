@@ -34,4 +34,13 @@ public class MissoesService {
     public void deletarMissaoPorId(Long id){
         missoesRepository.deleteById(id);
     }
+
+    // Atualizar informações do ninja por ID
+    public MissoesModel alterarMissao(Long id, MissoesModel missoesModel){
+        if (missoesRepository.existsById(id)) {
+            missoesModel.setId(id);
+            return missoesRepository.save(missoesModel);
+        }
+        return null;
+    }
 }

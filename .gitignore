@@ -38,3 +38,4 @@ data/
 
 # Arquivos
 .env
+conventional_commit_messages.md
